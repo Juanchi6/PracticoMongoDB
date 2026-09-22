@@ -73,3 +73,16 @@ La figura 7 muestra el dashboard con la gráfica **Truth Velocity** ya guardada 
 ![Gráfica Truth Velocity en MongoDB Charts](BIGDATA/Captura%20de%20pantalla%202026-09-21%20224300.png)
 
 *Figura 7. Gráfica Truth Velocity creada en MongoDB Charts.*
+
+
+## 8. Livestream 2 – Atlas Search sobre notes
+
+Se creó el índice de búsqueda **default** sobre la colección **launchData.notes**, utilizando los campos `notes` y `title` definidos en el ejercicio. Luego se ejecutó en MongoDB Compass el pipeline de `simpleSearchQuery.js`, compuesto por `$search` y `$addFields`.
+
+La etapa `$search` realiza la búsqueda sobre `notes` y `title`, mientras que `$addFields` incorpora el campo `score` con la relevancia calculada por Atlas Search.
+
+La figura 8 muestra el resultado del pipeline sobre la colección **notes**, con documentos devueltos por la búsqueda y el campo `score` visible.
+
+![Resultado de Atlas Search sobre notes](BIGDATA/Captura%20de%20pantalla%202026-09-21%20230128.png)
+
+*Figura 8. Ejecución de simpleSearchQuery.js con $search y $addFields sobre launchData.notes.*
