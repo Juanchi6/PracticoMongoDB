@@ -51,21 +51,14 @@ La figura 5 muestra la consulta sobre **Aerospace → launchData → rocketData*
 *Figura 5. Consulta de rocketData filtrada por meta.device = "truth".*
 
 
-## 6. Livestream 1 – agregación por dispositivo
+## 6. Livestream 1 – agregación con filtro y relación con notes
 
-Siguiendo el bloque de agregaciones del Livestream 1, se ejecutó en **launchData.rocketData** un pipeline con `$group` para agrupar los documentos por el campo `meta.device` y contar la cantidad de lecturas de cada dispositivo.
+Siguiendo el bloque de agregaciones del Livestream 1, se ejecutó en **launchData.rocketData** un pipeline compuesto por tres etapas: `$match`, `$group` y `$lookup`.
 
-```javascript
-{
-  _id: "$meta.device",
-  readingsCount: {
-    $count: {}
-  }
-}
-```
+Primero se filtraron los registros posteriores a la fecha indicada en el ejercicio; luego se agruparon por `meta.device` para contar sus lecturas y, finalmente, se relacionó cada grupo con la colección **notes** mediante el campo `device`.
 
-La figura 6 muestra el resultado completo de la agregación: **dlc = 40.001**, **lidar = 792** y **truth = 79.998**.
+La figura 6 muestra el resultado final del pipeline. Para **dlc** se obtienen **762 lecturas** y un arreglo de **44 notes**; para **truth**, **1.522 lecturas** y un arreglo de **81 notes**.
 
-![Agregación de lecturas por dispositivo](BIGDATA/Captura%20de%20pantalla%202026-09-21%20222200.png)
+![Resultado del pipeline match group lookup](BIGDATA/Captura%20de%20pantalla%202026-09-21%20223002.png)
 
-*Figura 6. Resultado del agrupamiento de rocketData por meta.device.*
+*Figura 6. Resultado final de la agregación con $match, $group y $lookup sobre rocketData.*
