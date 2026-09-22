@@ -86,3 +86,14 @@ La figura 8 muestra el resultado del pipeline sobre la colección **notes**, con
 ![Resultado de Atlas Search sobre notes](BIGDATA/Captura%20de%20pantalla%202026-09-21%20230128.png)
 
 *Figura 8. Ejecución de simpleSearchQuery.js con $search y $addFields sobre launchData.notes.*
+
+
+## 9. Livestream 2 – gráfica embebida en la aplicación
+
+Como último paso del ejercicio, se habilitó el acceso no autenticado al gráfico **Truth Velocity** y se configuró la aplicación `embedChartFinal` con el **Base URL** y el **Chart ID** correspondientes al gráfico creado en MongoDB Charts.
+
+La aplicación React se ejecutó localmente y cargó correctamente la visualización mediante el SDK de MongoDB Charts. La figura 9 muestra la aplicación en `localhost:3000` con el título **Embedded MongoDB Chart** y la gráfica **Truth Velocity** embebida con sus tres series visibles.
+
+![Gráfica Truth Velocity embebida en la aplicación React](BIGDATA/Captura%20de%20pantalla%202026-09-21%20233534.png)
+
+*Figura 9. Resultado final del ejercicio: gráfica de MongoDB Charts embebida en la aplicación React.*
