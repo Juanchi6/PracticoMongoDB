@@ -49,3 +49,23 @@ La figura 5 muestra la consulta sobre **Aerospace → launchData → rocketData*
 ![Consulta de documentos del dispositivo truth](BIGDATA/Captura%20de%20pantalla%202026-09-21%20214554.png)
 
 *Figura 5. Consulta de rocketData filtrada por meta.device = "truth".*
+
+
+## 6. Livestream 1 – agregación por dispositivo
+
+Siguiendo el bloque de agregaciones del Livestream 1, se ejecutó en **launchData.rocketData** un pipeline con `$group` para agrupar los documentos por el campo `meta.device` y contar la cantidad de lecturas de cada dispositivo.
+
+```javascript
+{
+  _id: "$meta.device",
+  readingsCount: {
+    $count: {}
+  }
+}
+```
+
+La figura 6 muestra el resultado completo de la agregación: **dlc = 40.001**, **lidar = 792** y **truth = 79.998**.
+
+![Agregación de lecturas por dispositivo](BIGDATA/Captura%20de%20pantalla%202026-09-21%20222200.png)
+
+*Figura 6. Resultado del agrupamiento de rocketData por meta.device.*
