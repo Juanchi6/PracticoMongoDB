@@ -36,15 +36,15 @@ Se incorporó la colección **notes** dentro de la misma base **launchData**. La
 
 *Figura 4. Colección notes disponible en la base launchData.*
 
-## 5. Livestream 1 – Consultas simples
+## 5. Livestream 1 – revisión de datos con consultas simples
 
-Con los datos cargados, se comenzó la revisión de **rocketData** mediante las consultas simples del Livestream 1. En MongoDB Compass se aplicó el filtro:
+Como evidencia representativa del uso de `simpleQueries.js`, se ejecutó en MongoDB Compass el filtro:
 
 ```json
 {"meta.device": "truth"}
 ```
 
-La figura 5 muestra la consulta ejecutada sobre **Aerospace → launchData → rocketData**. Compass devuelve **79.998 documentos** que cumplen el filtro, y en los resultados se observan registros con el campo `time` y distintas mediciones identificadas con el prefijo `truth_`.
+La figura 5 muestra la consulta sobre **Aerospace → launchData → rocketData** y el resultado obtenido: **79.998 documentos**. En los registros visibles aparecen el campo `time` y mediciones asociadas al dispositivo `truth`.
 
 ![Consulta de documentos del dispositivo truth](BIGDATA/Captura%20de%20pantalla%202026-09-21%20214554.png)
 
