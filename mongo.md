@@ -28,4 +28,24 @@ La importación finalizó con **120.791 documentos**, como muestra el aviso de l
 
 *Figura 3. Importación de rocketData completada.*
 
-**Siguiente paso:** importar `data/notes.json` en la colección **notes** de la misma base y continuar con las consultas de la guía.
+## 4. Importación de la colección notes
+
+Se incorporó la colección **notes** dentro de la misma base **launchData**. La figura 4 registra la colección ya disponible junto con los datos cargados previamente en **rocketData**.
+
+![Colección notes importada en launchData](BIGDATA/Captura%20de%20pantalla%202026-09-15%20205542.png)
+
+*Figura 4. Colección notes disponible en la base launchData.*
+
+## 5. Livestream 1 – Consultas simples
+
+Con los datos cargados, se comenzó la revisión de **rocketData** mediante las consultas simples del Livestream 1. En MongoDB Compass se aplicó el filtro:
+
+```json
+{"meta.device": "truth"}
+```
+
+La figura 5 muestra la consulta ejecutada sobre **Aerospace → launchData → rocketData**. Compass devuelve **79.998 documentos** que cumplen el filtro, y en los resultados se observan registros con el campo `time` y distintas mediciones identificadas con el prefijo `truth_`.
+
+![Consulta de documentos del dispositivo truth](BIGDATA/Captura%20de%20pantalla%202026-09-21%20214554.png)
+
+*Figura 5. Consulta de rocketData filtrada por meta.device = "truth".*
