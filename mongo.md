@@ -62,3 +62,14 @@ La figura 6 muestra el resultado final del pipeline. Para **dlc** se obtienen **
 ![Resultado del pipeline match group lookup](BIGDATA/Captura%20de%20pantalla%202026-09-21%20223002.png)
 
 *Figura 6. Resultado final de la agregación con $match, $group y $lookup sobre rocketData.*
+
+
+## 7. Livestream 1 – gráfica en MongoDB Charts
+
+Se creó en MongoDB Charts una visualización de tipo **Continuous Line** utilizando la colección **launchData.rocketData**. El eje X utiliza el campo `time` y se representan tres series de velocidad: `truth_vel_CON_ECEF_ECEF_MpS1`, `truth_vel_CON_ECEF_ECEF_MpS2` y `truth_vel_CON_ECEF_ECEF_MpS3`.
+
+La figura 7 muestra el dashboard con la gráfica **Truth Velocity** ya guardada y las tres series visibles.
+
+![Gráfica Truth Velocity en MongoDB Charts](BIGDATA/Captura%20de%20pantalla%202026-09-21%20224300.png)
+
+*Figura 7. Gráfica Truth Velocity creada en MongoDB Charts.*
